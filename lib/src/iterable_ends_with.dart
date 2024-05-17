@@ -1,15 +1,13 @@
-import 'dart:convert';
-
-import 'package:test/test.dart';
+import 'package:test/expect.dart';
 
 Matcher iterableEndsWith(Iterable expected) => _IterableEndsWith(expected);
 
 const _mismatchKey = 'mismatch';
 
 class _IterableEndsWith extends Matcher {
-  final Iterable expected;
+  final Iterable _expected;
 
-  _IterableEndsWith(this.expected);
+  _IterableEndsWith(this._expected);
 
   @override
   bool matches(item, Map matchState) {
@@ -18,7 +16,7 @@ class _IterableEndsWith extends Matcher {
     }
 
     final actual = item.toList();
-    final expected = this.expected.toList();
+    final expected = _expected.toList();
 
     if (actual.length < expected.length) {
       matchState[_mismatchKey] = _ShorterMismatch(
@@ -51,7 +49,7 @@ class _IterableEndsWith extends Matcher {
 
   @override
   Description describe(Description description) {
-    return description.add('an Iterable ending with $expected');
+    return description.add('an Iterable ending with $_expected');
   }
 
   @override
@@ -74,12 +72,14 @@ class _IterableEndsWith extends Matcher {
           'expected >= ${mismatch.expectedLength} elements',
         );
       case _ItemMismatch mismatch:
-        return mismatchDescription.add(
-          'has a mismatch at index ${mismatch.actualIndex}: '
-          'expected ${mismatch.expected} '
-          'as in ${jsonEncode(expected)} at index ${mismatch.expectedIndex}, '
-          'but found ${mismatch.actual}',
-        );
+        return mismatchDescription
+            .add('has a mismatch at index ${mismatch.actualIndex}: ')
+            .add('expected ')
+            .addDescriptionOf(mismatch.expected)
+            .add(' as in ')
+            .addDescriptionOf(_expected)
+            .add(' at index ${mismatch.expectedIndex}, but found ')
+            .addDescriptionOf(mismatch.actual);
     }
 
     return mismatchDescription.add('was $item');

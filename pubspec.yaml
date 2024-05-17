@@ -1,7 +1,10 @@
 name: matching
-description: Every matcher for your tests you have been missing.
-version: 0.1.0
+description: Every single matcher for your tests that you have been missing.
+version: 0.1.1
 repository: https://github.com/alexeyinkin/dart-matching
+
+topics:
+  - test
 
 environment:
   sdk: ^3.0.0
