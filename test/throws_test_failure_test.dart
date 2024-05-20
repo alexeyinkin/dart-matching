@@ -23,11 +23,11 @@ void main() {
       const text = 'abc';
 
       expect(
-        () => (throw TestFailure(text)),
+        () => throw TestFailure(text),
         throwsTestFailureContaining(text),
       );
       expect(
-        () => (throw TestFailure('--$text--')),
+        () => throw TestFailure('--$text--'),
         throwsTestFailureContaining(text),
       );
     });
@@ -45,12 +45,14 @@ void main() {
 
       try {
         expect(
-          () => (throw TestFailure(actual)),
+          () => throw TestFailure(actual),
           throwsTestFailureContaining(expected),
         );
       } on TestFailure catch (ex) {
-        expect(ex.message,
-            contains("throws TestFailure with a message containing 'Abc'"));
+        expect(
+          ex.message,
+          contains("throws TestFailure with a message containing 'Abc'"),
+        );
         expect(ex.message, contains('threw TestFailure:<abc>'));
       }
     });

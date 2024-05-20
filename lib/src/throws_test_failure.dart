@@ -1,7 +1,10 @@
 import 'package:test/test.dart';
 
+/// A matcher for functions that throw [TestFailure].
 final Matcher throwsTestFailure = throwsA(isA<TestFailure>());
 
+/// A matcher for functions that throw [TestFailure] with [message]
+/// as its substring.
 Matcher throwsTestFailureContaining(String message) =>
     throwsA(_IsTestFailureContaining(message));
 
@@ -13,7 +16,7 @@ class _IsTestFailureContaining extends Matcher {
   _IsTestFailureContaining(this._contains);
 
   @override
-  bool matches(item, Map matchState) {
+  bool matches(dynamic item, Map matchState) {
     if (item is! TestFailure) {
       return false;
     }
@@ -42,7 +45,7 @@ class _IsTestFailureContaining extends Matcher {
 
   @override
   Description describeMismatch(
-    item,
+    dynamic item,
     Description mismatchDescription,
     Map matchState,
     bool verbose,
@@ -55,7 +58,7 @@ class _IsTestFailureContaining extends Matcher {
           'TestFailure with null for message',
         );
 
-      case _WrongMessageMismatch mismatch:
+      case final _WrongMessageMismatch mismatch:
         return mismatchDescription
             .add('TestFailure with the message ')
             .addDescriptionOf(mismatch.actual);

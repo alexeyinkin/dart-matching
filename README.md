@@ -13,6 +13,7 @@ Currently we have:
 
 ## Iterables
 
+- `iterableStartsWith(Iterable)`
 - `iterableEndsWith(Iterable)`
 
 ## Testing Other Matchers

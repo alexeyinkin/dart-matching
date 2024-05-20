@@ -125,18 +125,18 @@ class _ComparableMatcher<T> extends Matcher {
     final mismatch = matchState[_mismatchKey];
 
     switch (mismatch) {
-      case _NotComparableMismatch mismatch:
+      case final _NotComparableMismatch mismatch:
         return mismatchDescription.add(
           'is of type ${mismatch.type}, which is not an instance of Comparable',
         );
 
-      case _DifferentComparablesMismatch mismatch:
+      case final _DifferentComparablesMismatch mismatch:
         return mismatchDescription
             .add('is of type ${mismatch.actual}, ')
             .add('which is not comparable to ${mismatch.expected} ')
             .addDescriptionOf(value);
 
-      case _ComparisonMismatch mismatch:
+      case final _ComparisonMismatch mismatch:
         return mismatchDescription
             .add(mismatch.comparisonResult)
             .addDescriptionOf(value);

@@ -5,8 +5,8 @@ void main() {
   group('_ComparableMatcher.', () {
     group('Ints.', () {
       test('Comparing to a less one', () {
-        final actual = 7;
-        final less = 6;
+        const actual = 7;
+        const less = 6;
 
         expect(actual, isAfter(less));
         expect(actual, isAfterOrEqualTo(less));
@@ -23,8 +23,8 @@ void main() {
       });
 
       test('Comparing to an equal one', () {
-        final actual = 7;
-        final equal = 7;
+        const actual = 7;
+        const equal = 7;
 
         expect(
           () => expect(actual, isAfter(equal)),
@@ -41,8 +41,8 @@ void main() {
       });
 
       test('Comparing to a greater one', () {
-        final actual = 7;
-        final greater = 8;
+        const actual = 7;
+        const greater = 8;
 
         expect(
           () => expect(actual, isAfter(greater)),
@@ -61,8 +61,8 @@ void main() {
 
     group('Int vs expected float.', () {
       test('Comparing to a less one', () {
-        final actual = 7;
-        final less = 6.0;
+        const actual = 7;
+        const less = 6.0;
 
         expect(actual, isAfter(less));
         expect(actual, isAfterOrEqualTo(less));
@@ -79,8 +79,8 @@ void main() {
       });
 
       test('Comparing to an equal one', () {
-        final actual = 7;
-        final equal = 7.0;
+        const actual = 7;
+        const equal = 7.0;
 
         expect(
           () => expect(actual, isAfter(equal)),
@@ -97,8 +97,8 @@ void main() {
       });
 
       test('Comparing to a greater one', () {
-        final actual = 7;
-        final greater = 8.0;
+        const actual = 7;
+        const greater = 8.0;
 
         expect(
           () => expect(actual, isAfter(greater)),
@@ -117,8 +117,8 @@ void main() {
 
     group('Float vs expected int.', () {
       test('Comparing to a less one', () {
-        final actual = 7.0;
-        final less = 6;
+        const actual = 7.0;
+        const less = 6;
 
         expect(actual, isAfter(less));
         expect(actual, isAfterOrEqualTo(less));
@@ -135,8 +135,8 @@ void main() {
       });
 
       test('Comparing to an equal one', () {
-        final actual = 7.0;
-        final equal = 7;
+        const actual = 7.0;
+        const equal = 7;
 
         expect(
           () => expect(actual, isAfter(equal)),
@@ -153,8 +153,8 @@ void main() {
       });
 
       test('Comparing to a greater one', () {
-        final actual = 7.0;
-        final greater = 8;
+        const actual = 7.0;
+        const greater = 8;
 
         expect(
           () => expect(actual, isAfter(greater)),
@@ -173,8 +173,8 @@ void main() {
 
     group('Strings.', () {
       test('Comparing to a less one', () {
-        final actual = 'abc';
-        final less = 'Abc';
+        const actual = 'abc';
+        const less = 'Abc';
 
         expect(actual, isAfter(less));
         expect(actual, isAfterOrEqualTo(less));
@@ -191,8 +191,8 @@ void main() {
       });
 
       test('Comparing to an equal one', () {
-        final actual = 'abc';
-        final equal = 'abc';
+        const actual = 'abc';
+        const equal = 'abc';
 
         expect(
           () => expect(actual, isAfter(equal)),
@@ -209,8 +209,8 @@ void main() {
       });
 
       test('Comparing to a greater one', () {
-        final actual = 'abC';
-        final greater = 'abc';
+        const actual = 'abC';
+        const greater = 'abc';
 
         expect(
           () => expect(actual, isAfter(greater)),
@@ -296,8 +296,8 @@ void main() {
     });
 
     test('Not Comparable', () {
-      final actual = [];
-      final less = 7;
+      const actual = [];
+      const less = 7;
 
       expect(
         () => expect(actual, isAfter(less)),
@@ -329,8 +329,8 @@ void main() {
     });
 
     test('Different Comparables', () {
-      final actual = '7';
-      final less = 7;
+      const actual = '7';
+      const less = 7;
 
       expect(
         () => expect(actual, isAfter(less)),
