@@ -16,6 +16,10 @@ Currently we have:
 - `iterableStartsWith(Iterable)`
 - `iterableEndsWith(Iterable)`
 
+## Strings
+
+- `stringContainsNTimes(String, int)`
+
 ## Testing Other Matchers
 
 - `throwsTestFailure`

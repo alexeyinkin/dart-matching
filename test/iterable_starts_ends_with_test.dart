@@ -40,10 +40,8 @@ void main() {
 
         expect(
           mismatchDescription.toString(),
-          equals(
-            'has a mismatch at index 1: expected <3> as in [1, 3] '
-            'but found <2>',
-          ),
+          'has a mismatch at index 1: expected <3> as in [1, 3] '
+          'but found <2>',
         );
       });
 
@@ -60,7 +58,7 @@ void main() {
 
         expect(
           mismatchDescription.toString(),
-          equals('is shorter: 2 elements, expected >= 3 elements'),
+          'is shorter: 2 elements, expected >= 3 elements',
         );
       });
     });
@@ -104,10 +102,8 @@ void main() {
 
         expect(
           mismatchDescription.toString(),
-          equals(
-            'has a mismatch at index 3: expected <3> as in [3, 5] at index 0, '
-            'but found <4>',
-          ),
+          'has a mismatch at index 3: expected <3> as in [3, 5] at index 0, '
+          'but found <4>',
         );
       });
 
@@ -124,7 +120,7 @@ void main() {
 
         expect(
           mismatchDescription.toString(),
-          equals('is shorter: 2 elements, expected >= 3 elements'),
+          'is shorter: 2 elements, expected >= 3 elements',
         );
       });
     });

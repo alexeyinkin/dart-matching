@@ -8,4 +8,11 @@ void main() {
 
     expect(actual, iterableEndsWith(ending));
   });
+
+  test('stringContainsNTimes', () {
+    const haystack = 'Maria';
+    const needle = 'a';
+
+    expect(haystack, stringContainsNTimes(needle, 2));
+  });
 }

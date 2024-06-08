@@ -1,6 +1,6 @@
 name: matching
 description: Every single matcher for your tests that you have been missing.
-version: 0.1.2
+version: 0.1.3
 repository: https://github.com/alexeyinkin/dart-matching
 
 topics:
@@ -13,4 +13,4 @@ dependencies:
   test: ^1.25.5
 
 dev_dependencies:
-  total_lints: ^3.2.0
+  total_lints: ^3.4.0

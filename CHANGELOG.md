@@ -1,3 +1,7 @@
+## 0.1.3
+
+* Added `stringContainsNTimes`.
+
 ## 0.1.2
 
 * Added `iterableStartsWith`.
